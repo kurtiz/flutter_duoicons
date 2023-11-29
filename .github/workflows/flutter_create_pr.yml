@@ -59,8 +59,3 @@ jobs:
             --head dev \
             --title "Automated Pull Request from CI" \
             --body "This pull request is automatically created after successful tests on the dev branch."
-      
-      - name: Approving Pull Request
-        run: gh pr review --approve -b main
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
