@@ -3,6 +3,8 @@
 ## Overview:
 DuoIcons is a dynamic Flutter library designed to revolutionize icon integration in Flutter applications. This library doesn't just offer a vast collection of icons; it brings a new dimension with its unique two-tone/color feature, allowing developers to infuse even more personality and creativity into their app designs. Whether you're building a mobile app, a web application, or a desktop solution, DuoIcons provides an extensive set of icons with the added flexibility of two-tone coloring.
 
+![img.png](assets%2Fimg%2Fimg.png)
+
 ## Key Features:
 
 - Extensive Icon Set: DuoIcons includes an expansive set of icons covering diverse categories such as general UI, social media, communication, navigation, and more. This ensures developers have access to a rich selection of icons for various use cases.
@@ -56,3 +58,11 @@ If you have ideas for new icons, improvements, or bug fixes, feel free to contri
 
 Elevate your Flutter app's visual appeal with DuoIcons – where icons meet simplicity, versatility, 
 and the power of two-tone coloring!
+
+## Credits
+
+The icons used in this Flutter package were originally created by [Fernando R.](https://github.com/fernandcf) 
+The original icons were designed for HTML and JavaScript libraries.
+
+- Original Icons Repository: [duo-icons](https://github.com/fernandcf/duo-icons)
+- Original Creator: [Fernando R.](https://github.com/fernandcf)
