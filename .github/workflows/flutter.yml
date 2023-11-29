@@ -15,6 +15,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v3
 
@@ -23,6 +26,12 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
       - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+
+      - name: Install snapd
+        run: sudo apt install snapd
+
+      - name: Install flutter using snapd
+        run: sudo snap install flutter --classic
 
       - name: Install dependencies
         run: flutter pub get
@@ -40,3 +49,13 @@ jobs:
       # want to change this to 'flutter test'.
       - name: Run tests
         run: flutter test
+
+      - name: Create Pull Request
+        if: success() && github.event_name == 'push'
+        run: |
+          gh pr create \
+            --base main \
+            --head dev \
+            --title "Automated Pull Request from CI" \
+            --body "This pull request is automatically created after successful tests on the dev branch."
+          gh pr review --approve -b main
