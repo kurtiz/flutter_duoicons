@@ -1,7 +1,7 @@
 name: flutter_duoicons
 description: DuoIcons is a dynamic Flutter library designed to revolutionize icon integration in Flutter applications. This library doesn't just offer a vast collection of icons; it brings a new dimension with its unique two-tone/color feature, allowing developers to infuse even more personality and creativity into their app designs. Whether you're building a mobile app, a web application, or a desktop solution, DuoIcons provides an extensive set of icons with the added flexibility of two-tone coloring
 version: 0.0.1
-homepage: https://github.com/kurtiz/flutter_duoicons
+homepage: https://kurtiz.github.io/flutter_duoicons/
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
