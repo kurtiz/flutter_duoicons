@@ -1,0 +1,30 @@
+name: Automated Pull Request Review and Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize, closed]
+
+jobs:
+  review-and-merge:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check tests
+        if: github.event_name == 'pull_request.closed' && github.event.pull_request.merged == false
+        run: |
+          gh pr check -n
+
+      - name: Approve Pull Request
+        if: success() && github.event_name == 'pull_request.closed' && github.event.pull_request.merged == false
+        run: |
+          gh pr review --approve -b main
+
+      - name: Merge Pull Request
+        if: success() && github.event_name == 'pull_request.closed' && github.event.pull_request.merged == false
+        run: |
+          gh pr merge --base main --head dev
